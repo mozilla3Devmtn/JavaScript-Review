@@ -8,7 +8,9 @@ first(names, function(firstName){
 });
 
 
-
+var first = function(arr, cb){
+  var firstName = return arr[0];
+}
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
 
@@ -20,7 +22,9 @@ last(names, function(lastName){
   console.log('The last name in names is ', lastName);
 });
 
-
+var last = function(arr, cb){
+  var lastName = return arr[arr.length-1];
+}
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
@@ -29,15 +33,21 @@ last(names, function(lastName){
 
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
-contains('Colt', names, function(yes){
-  if(yes){
+contains('Colt', names, function(){
+  if(true){
     console.log('Colt is in the array');
   } else {
     console.log('Colt is not in the list');
   }
 });
 
-
+var contains = function(str, arr, cb){
+  for (var i = 0; i < arr.length; i++){
+    if (str === arr[i]){
+      return true;
+    }
+  }return false;
+}
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
@@ -51,12 +61,18 @@ map(numbers, function(num){
   return num * 2; //returns an array of [2,4,6,8,10]
 });
 
+var map = function(arr, cb){
+  var myArr = [];
+  for (var i = 0; i < arr.length; i++){
+    var num = cb(arr[i]);
+    debugger;
+    myArr.push(num);  
+  } return myArr;
+}
 
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
-
-
 
 
 var names = ['Tyler', 'Cahlan', 'Ryan', 'Colt', 'Tyler', 'Blaine', 'Cahlan'];
@@ -64,7 +80,17 @@ uniq(names, function(uniqArr){
   console.log('The new names array with all the duplicate items removed is ', uniqArr);
 });
 
-
+var uniq = function(arr, cb){
+  var uniqArr = [];
+  for(var i = 0; i < arr.length; i++){
+    for (var j = arr.length-1; j > 0; j--){
+      debugger;
+      if (arr[j] === arr[i]){
+        arr.delete[i];
+      }
+    }
+  }return uniqArr;
+}
 
 
 /* NEXT PROBLEM - NEXT PROBLEM - NEXT PROBLEM */
@@ -122,3 +148,4 @@ var numbers  = [1, 2, 3, 4, 5, 6];
 find(numbers, function(num){ 
   return num % 2 == 0; //should return 2
 })
+
